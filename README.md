@@ -1,4 +1,6 @@
-#Typescript + JSX example (TSX) for Inferno
+# alcohol-inferno
+
+# Based on: Typescript + JSX example (TSX) for Inferno
 
 ## Overview
 
@@ -13,3 +15,5 @@ To run the example app, run `npm start`. View `http://localhost:8080` in your br
 ## Requirements
 
 NodeJS v6+ is required.
+
+
