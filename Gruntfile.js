@@ -38,7 +38,18 @@ module.exports = function(grunt) {
           'prod/index.html': 'dist/index.html',     // 'destination': 'source'
         }
       },
-    },/*
+    },
+    copy: {
+      webapp: {
+        expand: true,
+        cwd:'src/webapp/',
+        src: ['.htaccess', '.manifest'],
+        dest:'prod/'
+      }
+    },
+    webpack: {
+      prod: require('./webpack.config.js')
+    }/*
     watch: {
       styles: {
         files: ['./src/scss/**.scss'], // which files to watch
@@ -66,6 +77,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-postcss');
-
-  grunt.registerTask('default', ['sass', 'postcss', 'uglify', 'htmlmin:prod']);
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks("grunt-webpack");
+  //grunt.loadNpmTasks('grunt-parallel');
+  grunt.registerTask('default', ['copy:webapp', 'sass', 'postcss', 'uglify', 'htmlmin:prod']);
 };
