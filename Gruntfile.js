@@ -1,3 +1,6 @@
+var webp = require('./webpack.config.js');
+webp.failOnError = false;
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -48,7 +51,7 @@ module.exports = function(grunt) {
       }
     },
     webpack: {
-      prod: require('./webpack.config.js')
+      prod: webp
     }/*
     watch: {
       styles: {
@@ -80,5 +83,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks("grunt-webpack");
   //grunt.loadNpmTasks('grunt-parallel');
-  grunt.registerTask('default', ['copy:webapp', 'sass', 'postcss', 'uglify', 'htmlmin:prod']);
+  grunt.registerTask('default', ['webpack:prod', 'copy:webapp', 'sass', 'postcss', 'uglify', 'htmlmin:prod']);
 };
