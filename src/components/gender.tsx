@@ -13,10 +13,10 @@ export default class Gender extends Component<Props, any> {
 		return (
 			<div className="gender">
 					<label for="GenderSelector">Choose your gender!</label>
-						<select id="GenderSelector" name="gender" value={props.gender} onChange={ linkEvent(props, this.handleChange) } >
-							<option value="0">Man</option>
-							<option value="1">Woman</option>
-						</select>
+					<select id="GenderSelector" name="gender" value={props.gender} onChange={ linkEvent(props, this.handleChange) } >
+						<option value="0">Man</option>
+						<option value="1">Woman</option>
+					</select>
 				</div>
 			);
 	}

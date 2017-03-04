@@ -27,7 +27,8 @@ module.exports = function(grunt) {
     uglify: {
       dev: {
         files: {
-          'prod/output.min.js': ['dist/**.js']
+          'prod/bundle.js': ['dist/**.js'],
+          'prod/service.worker.js': 'webapp/service.worker.js'
         }
       }
     },
@@ -46,33 +47,29 @@ module.exports = function(grunt) {
       webapp: {
         expand: true,
         cwd:'src/webapp/',
-        src: ['.htaccess', '.manifest'],
+        src: ['.htaccess', '.manifest', 'manifest.json'],
         dest:'prod/'
+      },
+      webapp_icon: {
+        expand: true,
+        cwd: 'src/webapp/',
+        src: 'fireworks-icon192x192.png',
+        dest: 'prod/img'
       }
     },
     webpack: {
       prod: webp
-    }/*
+    },
     watch: {
       styles: {
         files: ['./src/scss/**.scss'], // which files to watch
         tasks: ['sass', 'postcss'],
-        options: {
-          nospawn: true
-          interrupt: true,
-          event: ['all']
-        }
       },
       scripts: {
         files: ['Gruntfile.js', 'dist/**.js'],
         tasks: ['uglify'],
-        options: {
-          nospawn: true
-          interrupt: true,
-          event: ['all']
-        }
       }
-    }*/
+    }
   });
   //grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -83,5 +80,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks("grunt-webpack");
   //grunt.loadNpmTasks('grunt-parallel');
-  grunt.registerTask('default', ['webpack:prod', 'copy:webapp', 'sass', 'postcss', 'uglify', 'htmlmin:prod']);
+  grunt.registerTask('watch-style', [ 'copy:webapp', 'sass', 'postcss', 'uglify', 'htmlmin:prod', 'watch:styles' ])
+  grunt.registerTask('default', ['webpack:prod', 'copy:webapp', 'copy:webapp_icon', 'sass', 'postcss', 'uglify', 'htmlmin:prod']);
 };

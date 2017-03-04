@@ -49,9 +49,9 @@ export default class Alcohol extends Component<Props, any> {
 		let _alcohols = this.state.alcohols;
 		return (
 			<div className="alcohol">
-				<h1>{ this.state.ratio }</h1>
+				<h1>Alcohol Test</h1>
 				<RatioAlcohol ratio={ this.state.ratio } valueChanged={this.changeRatio } />
-				<button onClick={ linkEvent(this, this.addAlcohol )}>Add alcohol</button>
+				<button className="add-more" onClick={ linkEvent(this, this.addAlcohol )}>Add alcohol</button>
 				<div className="alcohols">
 					{(_alcohols).map((alcohol, id) => {
 					return (
@@ -59,7 +59,7 @@ export default class Alcohol extends Component<Props, any> {
 					);
 					})}
 				</div>
-				<span>{ this.state.alcohol.toPrecision(3) }</span>
+				<span class="result">{ this.state.alcohol.toPrecision(3) }</span>
 			</div>
 		);
 	}
