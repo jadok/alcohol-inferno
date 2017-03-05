@@ -24,14 +24,14 @@ module.exports = function(grunt) {
             src: 'prod/css/style.css'
         }
     },
-    uglify: {
-      dev: {
-        files: {
-          'prod/bundle.js': ['dist/**.js'],
-          'prod/service.worker.js': './src/webapp/service.worker.js'
-        }
-      }
-    },
+    // uglify: {
+    //   dev: {
+    //     files: {
+    //       'prod/bundle.js': ['dist/**.js'],
+    //       'prod/service.worker.js': './src/webapp/service.worker.js'
+    //     }
+    //   }
+    // },
     htmlmin: {                                     // Task
       prod: {                                      // Target
         options: {                                 // Target options

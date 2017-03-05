@@ -5,6 +5,7 @@
 		"module": "es6",
 		"allowJs": false,
 		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "node",
 		"sourceMap": true,
 		"lib": [
 			"es6",

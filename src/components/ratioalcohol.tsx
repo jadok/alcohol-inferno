@@ -4,6 +4,7 @@ import { RatioAlcoholPerson } from '../models/alcohol.model';
 
 import Weight from './weight';
 import Gender from './gender';
+import {Props} from 'inferno';
 
 export class RatioAlcohol extends Component<Props, any> {
 	private _ratio_engine: RatioAlcoholPerson;
@@ -11,29 +12,38 @@ export class RatioAlcohol extends Component<Props, any> {
 		super(props, context);
 		this.state = { weight: 65, gender: 0 , ratio: 0};
 		this._ratio_engine = new RatioAlcoholPerson(this.state.gender, this.state.weight);
-		const _ratio_tmp = this._ratio_engine.Calc();
-		this.setState({ ratio:  _ratio_tmp});
-		props.valueChanged(_ratio_tmp);
+
 		this.setChangeWeight = this.setChangeWeight.bind(this);
 		this.setChangeGender = this.setChangeGender.bind(this);
 	}
 	setChangeWeight(event) {
-		this._ratio_engine.weight = event;
+		const weight = parseInt(event.currentTarget.value, 10);
+
+		this._ratio_engine.weight = weight;
 		const _ratio = this._ratio_engine.Calc();
-		this.setState({ weight: event, ratio:  _ratio});
+		this.setState({ weight: weight, ratio:  _ratio});
 		this.props.valueChanged(_ratio);
 	}
 	setChangeGender(event) {
-		this._ratio_engine.gender = event;
+		const gender = parseInt(event.currentTarget.value, 10);
+
+		this._ratio_engine.gender = gender;
 		const _ratio = this._ratio_engine.Calc();
-		this.setState({ gender: event, ratio: _ratio });
+		this.setState({ gender: gender, ratio: _ratio });
 		this.props.valueChanged(_ratio);
 	}
+
+	componentDidMount() {
+		const _ratio_tmp = this._ratio_engine.Calc();
+		this.setState({ ratio:  _ratio_tmp});
+		this.props.valueChanged(_ratio_tmp);
+	}
+
 	render(props){
 		return (
 			<div className="ratio-alcohol">
-				<Weight valueChanged={ this.setChangeWeight } weight={ this.state.weight } />
-				<Gender valueChanged={ this.setChangeGender } gender={ this.state.gender } />
+				<Weight handleChange={ this.setChangeWeight } weight={ this.state.weight } />
+				<Gender handleChange={ this.setChangeGender } gender={ this.state.gender } />
 			</div>
 		);
 	}
