@@ -1,4 +1,3 @@
-import {version} from 'inferno';
 import Component from 'inferno-component';
 
 import Alcohol from './components/alcohol';
