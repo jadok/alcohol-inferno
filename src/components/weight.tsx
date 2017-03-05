@@ -6,7 +6,6 @@ export default class Weight extends Component<Props, any> {
 		super(props, context);
 	}
 	handleChangeWeight(instance, event) {
-		console.log(instance, event);
 		instance.valueChanged(parseInt(event.target.value));
 	}
 	render(props){

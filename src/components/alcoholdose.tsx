@@ -27,13 +27,14 @@ export class AlcoholDose extends Component<Props, any> {
 		instance.deleteDose(instance.id);
 	}
 	render(props) {
+		console.log("alcoholdose", props.id, props.dose, this.state.quantity, this.state.degree);
 		return (
 				<div className="dose" id={props.id}>
-					<div>
+					<div className="quantity">
 						<label for="QuantityInput">Quantity (ml)</label>
 						<input id="QuantityInput" name="quantity" type="number" value={ this.state.quantity } onInput={ linkEvent(this, this.handleQuantity) } />
 					</div>
-					<div>
+					<div className="degree">
 						<label for="DegreeInput">Degree of the alcohol (°)</label>
 						<input id="DegreeInput" type="number" value={ this.state.degree } onInput={ linkEvent(this, this.handleDegree) } />
 					</div>

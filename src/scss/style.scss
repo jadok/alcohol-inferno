@@ -1,5 +1,6 @@
 $interline: .3em;
 $add_more_color: #002bc1;
+$no_more_color: #dd5200;
 
 body {
   font-size: 15px;
@@ -22,7 +23,17 @@ label {
   border-color: $add_more_color;
   color: #FFF;
 }
+.no-drink {
+  width: 100%;
+  margin-top: $interline;
+  background-color: $no_more_color;
+  border-color: $no_more_color;
+  text-align: right;
+  padding-left: 20px;
+  color: #FFF;
+}
 
+///---
 #app {
   margin: 0 auto;
   padding-left: 5px;
@@ -36,14 +47,21 @@ label {
 }
 
 .alcohols {
-  padding-bottom: $interline;
+  padding-top: $interline * 2;
+  padding-bottom: $interline * 2;
 }
 
-.gender label,
-.gender select,
-.weight label,
-.weight input {
-  display: block;
-  width: 100%;
+.dose {
+  padding-top: $interline;
 }
 
+.gender,
+.weight,
+.quantity,
+.degree {
+  select,
+  input {
+    display: block;
+    width: 100%;
+  }
+}

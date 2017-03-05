@@ -2,8 +2,6 @@ dist
 
 _site
 .history
-.git
-build
 .build
 .git
 .history
@@ -12,14 +10,12 @@ build
 .nyc_output
 .sass-cache
 .vscode
-build
-coverage
+prod
+dist
 jsconfig.json
-Gemfile.lock
 node_modules
 .DS_Store
 *.map
 *.log
 *.swp
 *~
-test/data/result.json

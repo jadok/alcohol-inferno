@@ -28,7 +28,7 @@ module.exports = function(grunt) {
       dev: {
         files: {
           'prod/bundle.js': ['dist/**.js'],
-          'prod/service.worker.js': 'webapp/service.worker.js'
+          'prod/service.worker.js': './src/webapp/service.worker.js'
         }
       }
     },
@@ -80,6 +80,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks("grunt-webpack");
   //grunt.loadNpmTasks('grunt-parallel');
-  grunt.registerTask('watch-style', [ 'copy:webapp', 'sass', 'postcss', 'uglify', 'htmlmin:prod', 'watch:styles' ])
+  grunt.registerTask('watch-style', [ 'copy:webapp', 'copy:webapp_icon', 'sass', 'postcss', 'uglify', 'htmlmin:prod', 'watch:styles' ]);
   grunt.registerTask('default', ['webpack:prod', 'copy:webapp', 'copy:webapp_icon', 'sass', 'postcss', 'uglify', 'htmlmin:prod']);
 };

@@ -12,16 +12,14 @@ export class RatioAlcohol extends Component<Props, any> {
 		this.state = { weight: 65, gender: 0 , ratio: 0};
 		this._ratio_engine = new RatioAlcoholPerson(this.state.gender, this.state.weight);
 		const _ratio_tmp = this._ratio_engine.Calc();
-		console.log(_ratio_tmp);
 		this.setState({ ratio:  _ratio_tmp});
-		this.props.valueChanged(_ratio_tmp);
+		props.valueChanged(_ratio_tmp);
 		this.setChangeWeight = this.setChangeWeight.bind(this);
 		this.setChangeGender = this.setChangeGender.bind(this);
 	}
 	setChangeWeight(event) {
 		this._ratio_engine.weight = event;
 		const _ratio = this._ratio_engine.Calc();
-		console.log(event, _ratio);
 		this.setState({ weight: event, ratio:  _ratio});
 		this.props.valueChanged(_ratio);
 	}
@@ -33,10 +31,10 @@ export class RatioAlcohol extends Component<Props, any> {
 	}
 	render(props){
 		return (
-				<div className="ratio-alcohol">
-					<Weight valueChanged={ this.setChangeWeight } weight={ this.state.weight } />
-					<Gender valueChanged={ this.setChangeGender } gender={ this.state.gender } />
-				</div>
+			<div className="ratio-alcohol">
+				<Weight valueChanged={ this.setChangeWeight } weight={ this.state.weight } />
+				<Gender valueChanged={ this.setChangeGender } gender={ this.state.gender } />
+			</div>
 		);
 	}
 }
