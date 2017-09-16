@@ -1,0 +1,17 @@
+@import 'header';
+
+.header {
+  height: 5em;
+  display: flex;
+  justify-content: space-between;
+
+  nav {
+    float: right;
+
+    a {
+      height: 56px;
+      line-height: 56px;
+      display: inline-block;
+    }
+  }
+}

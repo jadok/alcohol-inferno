@@ -1,0 +1,29 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base"],
+  "plugins": [
+    "react",
+    "es6"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "func-names": "off",
+    "comma-dangle": "off",
+    "semi": "off",
+    "arrow-body-style":"off",
+    "strict": "off",
+    "import/extensions": "off"
+  },
+  "globals": {
+    /*"fetch": false,
+    "caches": false,
+    "self": false,
+    "document": false,
+    "console": false,
+    "navigator": false*/
+  }
+}
+

@@ -1,0 +1,28 @@
+@import 'header';
+@import 'burger';
+
+.header {
+  .menu {
+    display: flex;
+    float: left;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  nav {
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: left;
+
+    a {
+      display: block;
+      height: 2em;
+      line-height: 2em;
+    }
+  }
+
+  .burger {
+    display: block;
+  }
+}

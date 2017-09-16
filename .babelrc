@@ -1,7 +1,8 @@
 {
   "compact": false,
   "presets": [
-    ["es2015", {"loose": true, "modules": false}]
+    "react",
+    "es2015"
   ],
   "plugins": [
     "transform-class-properties",

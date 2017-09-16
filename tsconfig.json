@@ -1,23 +1,22 @@
 {
-	"version": "2.1.5",
+	"version": "2.5.2",
 	"compilerOptions": {
 		"target": "es6",
 		"module": "es6",
 		"allowJs": false,
-		"allowSyntheticDefaultImports": true,
+		"noUnusedParameters": false,
+		"noUnusedLocals": false,
 		"moduleResolution": "node",
-		"sourceMap": true,
+		"preserveConstEnums": true,
+		"declaration": true,
+		"sourceMap": false,
 		"lib": [
 			"es6",
 			"es7",
 			"dom"
 		],
-		"types": [
-			"inferno"
-		],
 		"jsx": "preserve",
-		"noUnusedLocals": true,
-		"strictNullChecks": false,
+		"strictNullChecks": true,
 		"removeComments": false
 	},
 	"include": [
@@ -25,5 +24,6 @@
 	],
 	"exclude": [
 		"node_modules"
-	]
+	],
+	"compileOnSave": false
 }

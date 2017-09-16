@@ -1,6 +1,25 @@
-import {render} from 'inferno';
-import { MyComponent } from './mycomponent';
+import { render } from 'inferno'
+import 'inferno-devtools'
 
-const container = document.getElementById('app');
+// import Layout from './templates/layout'
 
-render(<MyComponent />, container);
+const container = document.getElementById('app')
+
+const views = (
+  <h1>toto</h1>
+)
+
+render(
+  views,
+  container
+)
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service.worker.js', { scope: '/' }).then((reg) => {
+    // registration worked
+    console.log(`Registration succeeded. Scope is ${reg.scope}`)
+  }).catch((error) => {
+    // registration failed
+    console.log(`Registration failed with ${error}`)
+  });
+}

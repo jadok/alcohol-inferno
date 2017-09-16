@@ -1,0 +1,23 @@
+.repository {
+  clear: both;
+  height: 3em;
+  margin-top: 0.5rem;
+
+  span {
+    width: 100px;
+    &.owner {
+      float: left;
+      font-family: Tahoma;
+      font-weight: 900;
+    }
+
+    &.popularity {
+      padding-top: 1em;
+      border-radius: 50%;
+      width: 3em;
+      height: 2em;
+      background-color: #003caf;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+const TypePerson = {
+  TYPE: 'TYPE_PERSON',
+  WEIGHT: 'TYPE_CHANGE_WEIGHT',
+  SEX: 'TYPE_CHANGE_GENDER'
+}
