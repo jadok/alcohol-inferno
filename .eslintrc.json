@@ -1,21 +1,36 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb-base"],
+  "extends": ["airbnb"],
   "plugins": [
     "react",
     "es6"
   ],
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "rules": {
     "func-names": "off",
     "comma-dangle": "off",
     "semi": "off",
-    "arrow-body-style":"off",
     "strict": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/label-has-for": "off",
+    "import/no-extraneous-dependencies": "off",
+    "brace-style": ["error", "stroustrup"],
+    "no-plusplus": "off",
+    "no-use-before-define": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"]}],
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/no-unknown-property": "off",
+    "import/no-unresolved": "off",
+    "space-infix-ops": "off",
+		"no-mixed-operators": "off"
   },
   "globals": {
     /*"fetch": false,

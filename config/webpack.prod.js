@@ -1,11 +1,9 @@
 const config = require('./webpack.config')
 const webpack = require('webpack')
+const merge = require('webpack-merge')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
-module.exports = Object.assign({}, config, {
-  performance: {
-    hints: false
-  },
+module.exports = merge(config, {
   devtool: 'hidden-source-map',
   plugins: [
     new CleanWebpackPlugin(
@@ -13,12 +11,10 @@ module.exports = Object.assign({}, config, {
         verbose: true
       }
     ),
-
-    // By default, webpack does `n=>n` compilation with entry files. This concatenates
-    // them into a single chunk.
-    new webpack.optimize.LimitChunkCountPlugin({
-      maxChunks: 1
-    }),
-    new webpack.optimize.OccurrenceOrderPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"',
+      'process.env.BABEL_ENV': '"production"'
+    })
   ]
 });

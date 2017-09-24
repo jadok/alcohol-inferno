@@ -1,4 +1,3 @@
-import { linkEvent } from 'inferno';
 import Component from 'inferno-component';
 import { Link } from 'inferno-router';
 

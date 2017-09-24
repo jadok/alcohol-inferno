@@ -1,8 +1,8 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path')
+const transformer = require('ts-transform-inferno').default;
 
 const extractSass = new ExtractTextPlugin({
   filename: '[name].css',
@@ -32,8 +32,13 @@ module.exports = {
       },
       {
         test: /\.tsx?$/, // All ts and tsx files will be process by
-        loaders: ['babel-loader', 'ts-loader'], // first babel-loader, then ts-loader
-        exclude: /node_modules/ // ignore node_modules
+        //loaders: ['babel-loader', 'ts-loader'], // first babel-loader, then ts-loader
+        loader: 'ts-loader',
+        options: {
+          getCustomTransformers: () => ({
+            before: [transformer()]
+          })
+        }
       },
       {
         test: /\.scss$/,
@@ -65,11 +70,12 @@ module.exports = {
     extractSass,
     new CopyWebpackPlugin([
       { from: './src/config/service.worker.js', to: './service.worker.js' },
-      { from: './assets/img/launcher-icon-1x.png', to: './img/launcher-icon-1x.png'},
-      { from: './assets/img/launcher-icon-2x.png', to: './img/launcher-icon-2x.png'},
-      { from: './assets/img/launcher-icon-4x.png', to: './img/launcher-icon-4x.png'},
-      { from: './assets/img/favicon.ico', to: './favicon.ico'},
-      { from: './assets/manifest.json', to: './manifest.json'}
+      { from: './src/assets/img/launcher-icon-1x.png', to: './img/launcher-icon-1x.png'},
+      { from: './src/assets/img/launcher-icon-2x.png', to: './img/launcher-icon-2x.png'},
+      { from: './src/assets/img/launcher-icon-4x.png', to: './img/launcher-icon-4x.png'},
+      { from: './src/assets/img/favicon.ico', to: './favicon.ico' },
+      { from: './src/assets/manifest.json', to: './manifest.json' },
+      { from: './src/index.html', to: './index.html' }
     ])
   ]
 };
