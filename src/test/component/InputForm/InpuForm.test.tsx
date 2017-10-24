@@ -1,10 +1,8 @@
-import 'inferno'
 import 'inferno-component'
 import { renderIntoDocument } from 'inferno-test-utils'
-import 'inferno-devtools'
 import 'jasmine'
 
-import InputForm from './../src/component/InputForm/InputForm.tsx'
+import InputForm from '../../../component/FormField/InputForm/InputForm'
 
 describe('Render InputForms', () => {
   it('Render InputForm', () => {

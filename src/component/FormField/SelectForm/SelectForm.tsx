@@ -1,4 +1,4 @@
-const SelectForm = ({ id, name, options, handleChange, value }) => {
+const SelectForm = ({ id, name, handleChange, options, title, value }) => {
   const listoptions = options.map((o) => {
     if (value === o.value) {
       return <option key={`gender_${o.value}`} value={o.value} default>{o.text}</option>
@@ -7,6 +7,7 @@ const SelectForm = ({ id, name, options, handleChange, value }) => {
   })
   return (
     <div>
+      <label htmlFor={id}>{title}</label>
       <select id={id} name={name} onChange={handleChange}>
         {listoptions}
       </select>

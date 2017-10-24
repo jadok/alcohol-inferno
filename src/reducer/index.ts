@@ -1,21 +1,13 @@
-import { AnyAction, combineReducers, Reducer } from 'redux';
+import { combineReducers } from 'redux'
 
-import { TypePerson } from '../action/type'
+import alcoholreducer from './alcoholReducer'
+import personreducer from './personReducer'
 
-import { initialState, State } from './constant.ts'
-
-const reducer: Reducer<any> = (state = initialState.person, action: AnyAction) => {
-  switch (action.type) {
-    case TypePerson.WEIGHT: {
-      return state
-    }
-    default:
-      return state
-  }
-}
+import { State } from './constant'
 
 const reducers = combineReducers< State >({
-  person: reducer
+  person: personreducer,
+  alcohol: alcoholreducer
 })
 
 export default reducers

@@ -1,5 +1,10 @@
 {
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-airbnb"],
+	"extends": ["tslint:recommended", "tslint-react", "tslint-config-airbnb"],
+	"settings": {
+		"import/resolver": {
+			"babel-module": {}
+		}
+	},
   "rules": {
 		// override tslint-react rules here
 		"ter-indent": false,
@@ -31,7 +36,11 @@
 		"variable-name": false,
 		"object-shortand-properties-first": false,
 		"jsx-boolean-value": false,
-		"object-literal-sort-keys": false
+		"object-literal-sort-keys": false,
+		"no-increment-decrement": false,
+		"no-var-self": false,
+		"one-line": false,
+		"brace-style": "stroustrup"
   }
 }
 /*{

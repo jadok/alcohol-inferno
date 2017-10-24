@@ -16,29 +16,35 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.scss', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.scss', '.js', '.jsx'],
+    modules: [
+      path.resolve('./src'),
+      path.resolve('./node_modules')
+    ]
   },
   performance: {
     hints: false
   },
   module: {
     rules: [
-      {
+      /*{
         enforce: 'pre',
         test: /\.tsx?$/,
         use: [
           'eslint-loader', 'tslint-loader'
         ]
-      },
+      },*/
       {
         test: /\.tsx?$/, // All ts and tsx files will be process by
-        //loaders: ['babel-loader', 'ts-loader'], // first babel-loader, then ts-loader
+        loaders: ['babel-loader', 'ts-loader'], // first babel-loader, then ts-loader
+        /*
         loader: 'ts-loader',
         options: {
           getCustomTransformers: () => ({
             before: [transformer()]
           })
         }
+        */
       },
       {
         test: /\.scss$/,

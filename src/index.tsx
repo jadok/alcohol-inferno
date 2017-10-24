@@ -1,20 +1,19 @@
 import { render } from 'inferno'
 import 'inferno-devtools'
 import { Provider } from 'inferno-redux'
-import { createStore } from 'redux'
+
+import store from 'store/index'
+
+import 'inferno-devtools'
 
 // import Layout from './templates/layout'
-import Person from './component/Person/Person.ts'
-
-import reducer from './reducer/index'
+import App from 'component/App/AppConnect'
 
 const container = document.getElementById('app')
 
-const store = createStore(reducer)
-
 const views = (
   <Provider store={store} >
-    <Person />
+    <App />
   </Provider>
 )
 

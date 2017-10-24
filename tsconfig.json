@@ -13,12 +13,14 @@
 			"dom"
 		],
 		"types": [
-			"inferno"
+			"inferno",
+			"node"
 		],
 		"jsx": "preserve",
 		"noUnusedLocals": true,
 		"strictNullChecks": true,
-		"removeComments": false
+		"removeComments": false,
+		"typeRoots": [ "node" ]
 	},
 	"include": [
 		"src/**/*"

@@ -5,6 +5,11 @@
     "react",
     "es6"
   ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
   "env": {
     "browser": true,
     "node": true,
@@ -30,9 +35,13 @@
     "react/no-unknown-property": "off",
     "import/no-unresolved": "off",
     "space-infix-ops": "off",
-		"no-mixed-operators": "off"
+    "no-mixed-operators": "off",
+    "import/first": "off",
+    "import/no-mutable-exports": "off"
   },
   "globals": {
+    "middleware": false,
+    "process": false
     /*"fetch": false,
     "caches": false,
     "self": false,
