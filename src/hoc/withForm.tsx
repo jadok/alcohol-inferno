@@ -1,5 +1,4 @@
 import Component from 'inferno-component'
-// import createClass from 'inferno-create-class'
 import { throwError } from 'inferno-shared'
 
 export interface InputData {
@@ -35,7 +34,7 @@ export class IwithFormState implements IwithFormInternaleProps{
   isSubmitting: boolean;
 }
 
-interface IwithFormInternaleProps {
+export interface IwithFormInternaleProps {
   errors: {
     [id: string]: string
   },

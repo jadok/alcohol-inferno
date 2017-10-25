@@ -18,8 +18,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.scss', '.js', '.jsx'],
     modules: [
-      path.resolve('./src'),
-      path.resolve('./node_modules')
+      path.resolve('./node_modules'),
+      path.resolve('./src')
     ]
   },
   performance: {

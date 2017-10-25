@@ -4,8 +4,6 @@ import { Provider } from 'inferno-redux'
 
 import store from 'store/index'
 
-import 'inferno-devtools'
-
 // import Layout from './templates/layout'
 import App from 'component/App/AppConnect'
 

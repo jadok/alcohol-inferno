@@ -6,7 +6,6 @@ module.exports = merge(config, {
   devServer: {
     historyApiFallback: true,
     port: 8099,
-    contentBase: './src/'
   },
   devtool: 'eval',
   plugins: [
