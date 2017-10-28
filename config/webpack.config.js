@@ -19,7 +19,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.scss', '.js', '.jsx'],
     modules: [
       path.resolve('./node_modules'),
-      path.resolve('./src')
     ]
   },
   performance: {
@@ -36,7 +35,9 @@ module.exports = {
       },*/
       {
         test: /\.tsx?$/, // All ts and tsx files will be process by
-        loaders: ['babel-loader', 'ts-loader'], // first babel-loader, then ts-loader
+        loaders: ['babel-loader', 'ts-loader'], // first babel-loader, then ts-loader,
+        exclude: path.resolve('./src/test/'),
+        include: path.resolve('./src/')
         /*
         loader: 'ts-loader',
         options: {

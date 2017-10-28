@@ -1,19 +1,17 @@
 module.exports = {
   setupFiles: [
-    './src/test/setupJest.js'
+    '<rootDir>/test/setupJest.js'
   ],
   collectCoverage: true,
   coverageReporters: [
     'json'
   ],
   testMatch: [
-    '<rootDir>/src/**/test/**/*.ts?(x)',
-    '<rootDir>/src/**/?(*.)(spec|test).ts?(x)'
+    '<rootDir>/test/**/*.(spec|test).ts?(x)',
   ],
   testPathIgnorePatterns: [
-    '/node_modules/',
-    '/fixtures/',
-    'setupJest.js'
+    '<rootDir>//node_modules/',
+    '<rootDir>/test/setupJest.js'
   ],
   globals: {
     usingJSDOM: true,
@@ -24,7 +22,7 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   projects: [
-    '<rootDir>/src/'
+    '<rootDir>'
   ],
   rootDir: __dirname,
   transform: {
