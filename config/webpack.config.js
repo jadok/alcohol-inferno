@@ -1,4 +1,3 @@
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path')
@@ -9,7 +8,7 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-  entry: './src/index.tsx', // Point to main file
+  entry: './src/test.tsx', // Point to main file
   output: {
     path: path.resolve('dist'),
     filename: 'index.js',
@@ -19,6 +18,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.scss', '.js', '.jsx'],
     modules: [
       path.resolve('./node_modules'),
+      path.resolve('./src/test.tsx'),
     ]
   },
   performance: {
@@ -37,7 +37,7 @@ module.exports = {
         test: /\.tsx?$/, // All ts and tsx files will be process by
         loaders: ['babel-loader', 'ts-loader'], // first babel-loader, then ts-loader,
         exclude: path.resolve('./src/test/'),
-        include: path.resolve('./src/')
+        include: path.resolve('./src/test.tsx')
         /*
         loader: 'ts-loader',
         options: {

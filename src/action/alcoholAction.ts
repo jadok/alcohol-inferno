@@ -4,6 +4,12 @@ export const type = {
 }
 
 export const action = {
+  /**
+   * Action Creator: Add a drink.
+   * 
+   * @param qty {number} The quantity of alcohol.
+   * @param degree {number} The Degree of the alcohol.
+   */
   add(qty: number, degree: number) {
     return {
       type: type.ADD,
@@ -11,6 +17,12 @@ export const action = {
       degree
     }
   },
+
+  /**
+   * Action Creator: Remove a drink.
+   *
+   * @param id {number} The id of the dring.
+   */
   remove(id: number) {
     return {
       type: type.REMOVE,

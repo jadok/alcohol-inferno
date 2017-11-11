@@ -2,10 +2,10 @@ import { render } from 'inferno'
 import 'inferno-devtools'
 import { Provider } from 'inferno-redux'
 
-import store from 'store/index'
+import store from './store/index.ts'
 
 // import Layout from './templates/layout'
-import App from 'component/App/AppConnect'
+import App from './component/App/AppConnect.ts'
 
 const container = document.getElementById('app')
 

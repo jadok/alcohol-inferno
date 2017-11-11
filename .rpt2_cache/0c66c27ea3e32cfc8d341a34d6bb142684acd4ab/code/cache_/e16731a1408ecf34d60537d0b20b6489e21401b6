@@ -1,0 +1,1 @@
+{"code":"import Inferno from 'inferno';\r\nvar texting = 'Hello world';\r\nvar MyComponent = function (_a) {\r\n    var message = _a.message;\r\n    return (<span>{message}</span>);\r\n};\r\nInferno.render(<MyComponent message={texting}/>, document.getElementById('app'));\r\n","map":{"mappings":""},"dts":{"name":"/home/jadok/Lab/project/alcohol-inferno/test.d.ts","text":""}}

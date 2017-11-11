@@ -1,0 +1,28 @@
+{
+  "presets": [
+    "inferno-app",
+    ["latest", {
+      "es2015": {
+        "modules": false
+      }
+    }],
+    "react"
+  ],
+  "plugins": [
+    "external-helpers",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "babel-plugin-syntax-jsx",
+    ["babel-plugin-inferno", {"imports": true}],
+    "transform-decorators-legacy",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ]
+  ]
+}
