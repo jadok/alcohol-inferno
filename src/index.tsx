@@ -1,18 +1,16 @@
 import { render } from 'inferno'
 import 'inferno-devtools'
-import { Provider } from 'inferno-redux'
+// import { Provider } from 'inferno-redux'
 
-import store from './store/index.ts'
+// import store from './store/index.ts'
 
 // import Layout from './templates/layout'
-import App from './component/App/AppConnect.ts'
+import App from 'component/Person/Person.tsx'
 
 const container = document.getElementById('app')
 
 const views = (
-  <Provider store={store} >
-    <App />
-  </Provider>
+  <App />
 )
 
 render(

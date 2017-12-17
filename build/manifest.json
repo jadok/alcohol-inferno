@@ -1,0 +1,26 @@
+{
+  "short_name": "GHT",
+  "name": "GithubTrend",
+  "icons": [
+    {
+      "src": "./img/launcher-icon-1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "./img/launcher-icon-2x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "./img/launcher-icon-4x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "theme_color": "#e53935",
+  "background_color": "#000000",
+  "start_url": ".",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}

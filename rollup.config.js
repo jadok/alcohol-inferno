@@ -8,7 +8,7 @@ const commonjs = require('rollup-plugin-commonjs')
 const uglify = require('rollup-plugin-uglify')
 const sass = require('rollup-plugin-sass')
 const rollupTypescript = require('rollup-plugin-typescript')
-const rootImport = require('rollup-plugin-root-import')
+const includePaths = require('rollup-plugin-includepaths')
 // const path = require('path')
 
 // utils
@@ -18,6 +18,13 @@ const PATHS = {
   src: 'src/index.tsx',
   dist: 'build/bundle.js'
 }
+
+const includePathOptions = {
+  include: {},
+  paths: ['src/'],
+  external: [],
+  extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.html']
+};
 
 // config
 const config = {
@@ -40,7 +47,7 @@ const config = {
     // bundle
     commonjs({
       namedExports: {
-        'node_modules/inferno/index.js': ['createVNode']
+        'node_modules/inferno/index.js': ['createVNode', 'render']
       },
       include: ['node_modules/**/*.js']
     }),
@@ -50,14 +57,7 @@ const config = {
     babel({ exclude: 'node_modules/**' }),
     // globals
     globals(),
-    rootImport({
-      // Will first look in `client/src/*` and then `common/src/*`. 
-      root: `${__dirname}/src`,
-      useEntry: 'preprend',
-  
-      // If we don't find the file verbatim, try adding these extensions 
-      extensions: ['.ts', '.tsx', '.js', '.jsx']
-    }),
+    includePaths(includePathOptions),
     // resolve
     resolve({ jsnext: true, browser: true, main: true }),
     // uglify

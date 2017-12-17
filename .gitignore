@@ -1,6 +1,5 @@
 dist
 coverage
-test
 .vscode
 node_modules
 .DS_Store
@@ -8,4 +7,5 @@ node_modules
 *.log
 *.swp
 *~
+dist
 .sass_cache

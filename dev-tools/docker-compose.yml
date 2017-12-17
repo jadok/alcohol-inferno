@@ -1,0 +1,12 @@
+version: '3'
+services:
+  6me-alcohol-web:
+    image: 6me/nginx:latest
+    ports:
+     - "80:80"
+     - "443:443"
+    volumes:
+      - ${WORKSPACE_PATH}/build:/var/www/sites/alcohol.fr
+      - ${WORKSPACE_PATH}/admin:/var/www/admin
+      - ${WORKSPACE_PATH}/config-sites:/var/www/config-sites
+    container_name: 6me-alcohol-web
