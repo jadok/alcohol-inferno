@@ -5,7 +5,7 @@ import 'inferno-devtools'
 // import store from './store/index.ts'
 
 // import Layout from './templates/layout'
-import App from 'component/Person/Person.tsx'
+import App from 'component/Person/Person.jsx'
 
 const container = document.getElementById('app')
 

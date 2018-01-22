@@ -10,7 +10,7 @@ export const action = {
    * @param qty {number} The quantity of alcohol.
    * @param degree {number} The Degree of the alcohol.
    */
-  add(qty: number, degree: number) {
+  add(qty, degree) {
     return {
       type: type.ADD,
       qty,
@@ -23,7 +23,7 @@ export const action = {
    *
    * @param id {number} The id of the dring.
    */
-  remove(id: number) {
+  remove(id) {
     return {
       type: type.REMOVE,
       id

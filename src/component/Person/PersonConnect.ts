@@ -1,12 +1,11 @@
 import { connect } from 'inferno-redux'
 import { bindActionCreators } from 'redux'
 
-import { action } from 'action/personAction'
-import Person from './Person'
+import { action } from 'action/personAction.js'
+import Person from './Person.jsx'
 
-import { State } from 'reducer/constant'
 
-const mapStateToProps = (state: State) => ({
+const mapStateToProps = state => ({
   gender: state.person.gender ? 1 : 0,
   weight: state.person.weight
 })

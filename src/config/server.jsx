@@ -1,7 +1,7 @@
 export const env = {
   url: 'http://127.0.0.1:1337/',
 };
-
+/*
 export class GetHeader implements RequestInit {
   // cache: 'default',
  headers: {
@@ -10,30 +10,22 @@ export class GetHeader implements RequestInit {
  method: 'GET';
  mode: 'cors'
 }
+*/
 
-export class GeneralHeader implements RequestInit {
- headers: {
+/* eslint-disable no-undef */
+export const GeneralHeader = new RequestInit()
+GeneralHeader.headers = {
   Origin: '*'
- };
- method: 'GET';
- mode: 'cors';
- body: '';
-
- constructor(method, body) {
-   if (typeof method !== 'undefined') {
-     this.method = method;
-   }
-   if (typeof body !== 'undefined') {
-     this.body = body;
-   }
- }
 }
+GeneralHeader.method = 'GET'
+GeneralHeader.mode = 'cors'
+GeneralHeader.body = ''
 
-export function GenerateFormHeader(that: HTMLFormElement) {
+export function GenerateFormHeader(that) {
   const group_element = that.getElementsByTagName('input');
   let body = [].reduce.call(group_element, (acc, val, index) => {
     if (index === 1) {
-      const tmp = new Object();
+      const tmp = {}
       tmp[acc.name] = acc.value;
       acc = tmp;
     }

@@ -1,10 +1,8 @@
-import { AnyAction, Reducer } from 'redux';
-
 import { type } from 'action/personAction'
 
 import { initialState } from './constant'
 
-const reducer: Reducer<any> = (state = initialState.person, action: AnyAction) => {
+const reducer = (state = initialState.person, action) => {
   switch (action.type) {
     case type.WEIGHT: {
       const newstate = Object.assign({}, state, { weight: parseInt(action.weight, 10) })

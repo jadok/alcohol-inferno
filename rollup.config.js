@@ -7,7 +7,6 @@ const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
 const uglify = require('rollup-plugin-uglify')
 const sass = require('rollup-plugin-sass')
-const rollupTypescript = require('rollup-plugin-typescript')
 const includePaths = require('rollup-plugin-includepaths')
 // const path = require('path')
 
@@ -15,7 +14,7 @@ const includePaths = require('rollup-plugin-includepaths')
 const isProduction = process.env.NODE_ENV === 'production'
 
 const PATHS = {
-  src: 'src/index.tsx',
+  src: 'src/index.jsx',
   dist: 'build/bundle.js'
 }
 
@@ -23,7 +22,7 @@ const includePathOptions = {
   include: {},
   paths: ['src/'],
   external: [],
-  extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.html']
+  extensions: ['.js', '.jsx', '.json', '.html']
 };
 
 // config
@@ -34,8 +33,6 @@ const config = {
   // sourceMap: isProduction ? 'none' : 'inline',
   format: 'iife',
   plugins: [
-    // typescript
-    rollupTypescript,
     // sass
     sass({ insert: true, output: false }),
     // replace

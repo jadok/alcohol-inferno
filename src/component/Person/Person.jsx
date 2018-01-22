@@ -1,14 +1,14 @@
 // import { linkEvent } from 'inferno'
 import Component from 'inferno-component'
 
-import InputForm from 'component/FormField/InputForm/InputForm'
-import SelectForm from 'component/FormField/SelectForm/SelectForm'
+import InputForm from 'component/FormField/InputForm/InputForm.jsx'
+import SelectForm from 'component/FormField/SelectForm/SelectForm.jsx'
 
-import gender from './constant.ts'
+import gender from './constant.js'
 
 const toto = () => null
 
-export default class Person extends Component<any, any> {
+export default class Person extends Component {
   constructor(props) {
     super(props)
     this.state = {

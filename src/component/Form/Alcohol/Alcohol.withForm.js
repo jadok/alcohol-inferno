@@ -1,7 +1,7 @@
-import { withForm, WithFormOption } from 'hoc/withForm'
-import Alcohol from './Alcohol'
+import { withForm } from 'hoc/withForm.jsx'
+import Alcohol from './Alcohol.jsx'
 
-const option: WithFormOption = {
+const option = {
   values: [
     {
       name: 'qty',

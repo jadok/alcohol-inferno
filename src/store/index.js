@@ -4,8 +4,8 @@ import DevTools from 'middleware/devtools'
 
 import reducer from 'reducer/index'
 
-let enhancer:any = null
-let store:any = null
+let enhancer = null
+let store = null
 
 if (process.env.NODE_ENV === 'production') {
   enhancer = compose()

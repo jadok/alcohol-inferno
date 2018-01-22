@@ -1,12 +1,10 @@
-import { AnyAction, Reducer } from 'redux'
-
 import { type } from 'action/alcoholAction'
 
 import { initialState } from './constant'
 
 let alcoholid = 0
 
-const reducer: Reducer<any> = (state = initialState.alcohol, action: AnyAction) => {
+const reducer = (state = initialState.alcohol, action) => {
   switch (action.type) {
     case type.ADD: {
       const newstate = [
